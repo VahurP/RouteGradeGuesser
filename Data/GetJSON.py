@@ -1,0 +1,1 @@
+﻿PATH_TO_JSON = "C:\\Users\\vahurpaist\\Downloads\\problems Moonboard 2016 .json"
