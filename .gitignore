@@ -1,0 +1,22 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Byte‑compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data folders
+data/raw/
+data/processed/
+
+# IDE settings
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
