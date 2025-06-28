@@ -20,3 +20,4 @@ data/processed/
 # OS files
 .DS_Store
 Thumbs.db
+config/moonboard_credentials.json
