@@ -9,7 +9,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Data folders
+# data folders
 data/raw/
 data/processed/
 

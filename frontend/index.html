@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MoonBoard Route Difficulty Guesser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>MoonBoard Route Difficulty Guesser</h1>
+
+  <div id="container">
+    <div id="boardWrapper">
+      <div id="board">
+        <div id="grid"></div>
+      </div>
+    </div>
+
+    <div id="panel">
+      <div id="metrics">
+        <div class="metric">
+          <div class="metric-label">Selected Holds</div>
+          <div class="metric-value" id="holdsCount">0</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Predicted Grade</div>
+          <div class="metric-value" id="gradeValue">—</div>
+        </div>
+      </div>
+
+      <div id="buttons">
+        <button id="clearBtn">Clear</button>
+        <button id="predictBtn" disabled>Predict grade</button>
+      </div>
+
+      <div>
+        <div class="metric-label" style="margin-bottom: 0.25rem;">
+          Selected sequence (click order)
+        </div>
+        <div id="sequenceBox">No holds selected.</div>
+      </div>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

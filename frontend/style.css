@@ -1,0 +1,210 @@
+﻿:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #222 0, #050505 60%);
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#container {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 1100px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+#boardWrapper {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#board {
+  position: relative;
+  background-image: url("./moonboard_2016.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 652 / 1002;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #333, 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+#grid {
+  position: absolute;
+  left: 11%;
+  right: 5%;
+  top: 6%;
+  bottom: 4%;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+}
+
+.cell {
+  position: relative;
+  cursor: pointer;
+}
+
+.cell:hover {
+  outline: 1px solid rgba(255, 75, 75, 0.18);
+  outline-offset: -1px;
+}
+
+.cell-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #ff4b4b;
+  background: rgba(255, 75, 75, 0.18);
+  box-shadow: 0 0 10px rgba(255, 75, 75, 0.8);
+  pointer-events: none;
+}
+
+.cell.selected .cell-dot {
+  display: block;
+}
+
+.cell:not(.selected) .cell-dot {
+  display: none;
+}
+
+#panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: rgba(10, 10, 10, 0.9);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 0 0 1px #262626, 0 16px 32px rgba(0, 0, 0, 0.7);
+}
+
+#metrics {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.metric {
+  flex: 1;
+  background: linear-gradient(145deg, #141414, #050505);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #262626;
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  margin-top: 0.18rem;
+}
+
+#buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: transform 0.05s ease, box-shadow 0.1s ease, background 0.1s ease;
+  white-space: nowrap;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+#clearBtn {
+  background: #272727;
+  color: #eee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+#predictBtn {
+  background: #00b4ff;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 180, 255, 0.5);
+}
+
+#predictBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  box-shadow: none;
+}
+
+#sequenceBox {
+  background: #111;
+  border-radius: 10px;
+  border: 1px solid #262626;
+  padding: 0.5rem 0.7rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  max-height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+#result {
+  font-size: 0.95rem;
+  min-height: 1.2rem;
+  white-space: pre-wrap;
+}
+
+.result-ok {
+  color: #00ff9d;
+}
+
+.result-error {
+  color: #ff5c5c;
+}
+
+@media (max-width: 900px) {
+  #container {
+    flex-direction: column;
+  }
+
+  #board {
+    max-width: 100%;
+  }
+}
